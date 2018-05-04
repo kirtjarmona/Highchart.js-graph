@@ -85,7 +85,13 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 		}
 } ?>
 <html>
-	<?php require_once("header.php"); ?>
+	<head>
+	<!-- ------Highchart Scripts------ -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="../js/highcharts-3d.js"></script>
+	</head>
 	<body class="container-fluid " style="background-color: #3cb371;">
 		<?php require_once("navigation.php"); ?>
 		<div class="row" style="margin-top: 40px;    padding-top: 15px;">
