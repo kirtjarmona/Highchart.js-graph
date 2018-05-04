@@ -4,7 +4,6 @@
 <?php require_once("../Connection/connection.php"); ?>
 <?php require_once("Inactive.php"); ?>
 <?php $Result="active"; ?>
-<!-- ---------- -->
 <?php
 // WHAT SUBJECT THEY HAVE
 //
@@ -85,7 +84,6 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 			return $Total_SCORE = ($Student_RR+$Peer_RR+$Superior_RR+$Self_RR);
 		}
 } ?>
-<!-- ---------- -->
 <html>
 	<?php require_once("header.php"); ?>
 	<body class="container-fluid " style="background-color: #3cb371;">
@@ -93,7 +91,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 		<div class="row" style="margin-top: 40px;    padding-top: 15px;">
 			<?php require_once("sidebar.php"); ?>
 			<div class="col-8 text-left text-center">
-				<!-- ------------ CONTENT HERE  -->
+				<!-- CONTENT HERE  -->
 				<div class="jumbotron" style="padding-top: 1em;">
 					<div class="text-left">
 						<a class="btn btn btn-<?php  echo $retVal = (isset($_GET['college']) && $_GET['college']=='IABARS') ? '' : 'outline-' ;?>primary btn-md" href="result.php?college=IABARS" role="button">IABARS</a>
@@ -115,7 +113,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 							?>
 						</div>
 						<?php endif ?>
-						<!-- ---- -->
+						<!-- -->
 						<?php if (isset($_GET['department'])): ?>
 						<div class="col-4 text-right" style="border-right: 1px solid #959595;">
 							<h6 class="text-center">Faculty</h6>
@@ -130,7 +128,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 							?>
 						</div>
 						<?php endif ?>
-						<!-- ------------------ -->
+						<!--  -->
 						<?php if (!isset($_GET['type'])) { ?>
 						<div class="col-5 text-center" style="border-right: 1px solid #959595;">
 							<?php $_SESSION['Dept_Id'] = array(); ?>
@@ -149,7 +147,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 							<div id="container_2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
 						</div>
 						<?php } ?>
-						<!-- ------------------ -->
+						<!--  -->
 						
 						<?php if (isset($_GET['department']) && isset($_GET['type'])): ?>
 						<div class="col-5 text-center" style="border-right: 1px solid #959595;">
@@ -192,6 +190,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 							<?php if (isset($_GET['type'])) { ?>
 							<hr class="my-4">
 							<div id="container" style="min-width: 310px; max-width: 800px; height: 200px; margin: 0 auto"></div>
+							<!-- ------Highchart Herer------ -->
 							<script type="text/javascript">
 											Highcharts.chart('container', {
 										    chart: {
@@ -273,9 +272,10 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 					<hr class="my-4">
 					
 					
-					<!-- ------------ -->
+					<!--  -->
 					
 				</div>
+				<!-- ------Highchart Herer------ -->
 				<script type="text/javascript">
 				Highcharts.chart('container_2', {
 			    chart: {
@@ -339,7 +339,7 @@ $count_ratings_result = pg_num_rows($result_ratings_result);
 			});
 				</script>
 				
-				<!-- ------------END CONTENT HERE  -->
+				<!-- END CONTENT HERE  -->
 			</div>
 			<?php require_once("sidebar_left.php"); ?>
 		</div>
